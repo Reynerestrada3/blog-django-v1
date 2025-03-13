@@ -6,8 +6,13 @@
 <body>
     <header>
         <h1><a href="{% url 'publications-list' %}">Blog de Josefino</a></h1>
+        <div>
+            <a href="{% url 'publication-create' %}">Nueva Publicacion</a>
+
+        </div>
     </header>
     {% block content %}
+
     {% endblock content %}
 </body>
 </html>
