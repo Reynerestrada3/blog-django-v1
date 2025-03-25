@@ -1,12 +1,16 @@
 {% extends "_base.html" %}
 
-{% block content %}
+{% block content %} 
     <h2>{{ publication.title }}</h2>
     <p>{{ publication.author }}</p>
     <p>{{ publication.body }}</p>
 
-    <a href="{% url 'publication-update' publication.pk %}">Editar</a>
+    {% if publication.author.pk == request.user.pk %}
+        <!-- Botón para editar -->
+        <a href="{% url 'publication-update' publication.pk %}">Actualizar</a>
 
-    <a href="{% url 'publication-delete' publication.pk %}">Eliminar</a>
+        <!-- Botón para eliminar -->
+        <a href="{% url 'publication-delete' publication.pk %}">Eliminar</a> 
+        {% endif %}       
 
 {% endblock content %}
