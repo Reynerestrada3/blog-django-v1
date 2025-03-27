@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #Local apps
     'blog',
-    'accounts', #NEW
+    'accounts', 
+    'crispy_forms',
+    'crispy_bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +132,7 @@ LOGIN_REDIRECT_URL = 'publications-list'
 
 #logout redirect
 LOGOUT_REDIRECT_URL = 'publications-list'
+
+#crispy forms settings
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
+CRISPY_ALOWED_TEMPLATE_PACKS = 'bootstrap5'
